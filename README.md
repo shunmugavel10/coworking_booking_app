@@ -1,16 +1,32 @@
-# coworking_booking
+# Coworking Booking App
 
-A new Flutter project.
+A Flutter mobile application for booking coworking spaces.
+This project was built as a machine test to demonstrate clean architecture, responsive UI, state management, and real-time features.
 
-## Getting Started
+A Flutter mobile app that provides an end-to-end coworking space booking flow.
 
-This project is a starting point for a Flutter application.
+Starts with a splash screen that transitions into the home screen with coworking branches.
 
-A few resources to get you started if this is your first Flutter project:
+Home screen supports search by name, branch, or city and filters by city or maximum price, with a responsive grid/list layout.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Map view displays coworking branches as markers and shows the user’s current location with permission handling.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Details screen includes an image carousel, description, amenities, operating hours, and a “Book Now” button.
+
+Booking screen allows users to select a date and time slot, confirm the booking, and receive a notification.
+
+My Bookings screen lists all upcoming and completed bookings.
+
+Notifications screen displays booking-related alerts generated during the flow.
+
+Built with Flutter, Riverpod for state management, GoRouter for navigation, and ScreenUtil for responsive design.
+
+Uses FlutterMap with MapTiler and Geolocator for maps and location services.
+
+Mock API implemented using local JSON data for coworking branches.
+
+Follows clean architecture with separation of core, data, and presentation layers.
+
+Includes reusable widgets like AppScaffold, AppButton, AppLoading, and AppError for consistent UI.
+
+Supports both light and dark themes with dynamic theme toggle in the app bar.
