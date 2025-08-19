@@ -1,0 +1,65 @@
+{
+  "branches": [
+    {
+      "id": "b1",
+      "name": "IndiHub - Koramangala",
+      "city": "Bengaluru",
+      "branch": "Koramangala",
+      "pricePerHour": 150,
+      "lat": 12.9344,
+      "lng": 77.6266,
+      "images": [
+        "https://picsum.photos/seed/cowork1/900/600",
+        "https://picsum.photos/seed/cowork2/900/600"
+      ],
+      "description": "Bright, modern workspace with fast Wi\u2011Fi, meeting rooms and coffee.",
+      "amenities": [
+        "WIFI",
+        "MEETING_ROOMS",
+        "PARKING",
+        "CAFETERIA"
+      ],
+      "hours": "Mon\u2013Sat 8:00\u201321:00, Sun 9:00\u201318:00"
+    },
+    {
+      "id": "b2",
+      "name": "WorkNest - HSR",
+      "city": "Bengaluru",
+      "branch": "HSR Layout",
+      "pricePerHour": 120,
+      "lat": 12.9101,
+      "lng": 77.6446,
+      "images": [
+        "https://picsum.photos/seed/cowork3/900/600",
+        "https://picsum.photos/seed/cowork4/900/600"
+      ],
+      "description": "Cozy floors, hot desks, private cabins, and free tea.",
+      "amenities": [
+        "WIFI",
+        "LOCKERS",
+        "PARKING"
+      ],
+      "hours": "Mon\u2013Fri 8:00\u201320:00, Sat\u2013Sun 10:00\u201318:00"
+    },
+    {
+      "id": "b3",
+      "name": "DeskWorks - Gachibowli",
+      "city": "Hyderabad",
+      "branch": "Gachibowli",
+      "pricePerHour": 100,
+      "lat": 17.4401,
+      "lng": 78.3489,
+      "images": [
+        "https://picsum.photos/seed/cowork5/900/600",
+        "https://picsum.photos/seed/cowork6/900/600"
+      ],
+      "description": "Quiet zone with ample sunlight, conference pods and pantry.",
+      "amenities": [
+        "WIFI",
+        "MEETING_ROOMS",
+        "CAFETERIA"
+      ],
+      "hours": "Mon\u2013Sat 7:30\u201322:00"
+    }
+  ]
+}
