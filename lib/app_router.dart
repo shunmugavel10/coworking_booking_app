@@ -10,16 +10,30 @@ import 'presentation/map/map_screen.dart';
 final appRouter = GoRouter(
   initialLocation: '/',
   routes: [
-    GoRoute(path: '/', builder: (_, __) => const SplashScreen()),
-    GoRoute(path: '/home', builder: (_, __) => const HomeScreen()),
-    GoRoute(path: '/details', builder: (_, state) {
-      final id = state.uri.queryParameters['id']!;
-      return DetailsScreen(id: id);
-    }),
-    GoRoute(path: '/booking', builder: (_, state) {
-      final id = state.uri.queryParameters['id']!;
-      return BookingScreen(branchId: id);
-    }),
+    GoRoute(
+      path: '/',
+      builder: (_, __) => const SplashScreen(),
+    ),
+    GoRoute(
+      path: '/home',
+      builder: (_, __) => const HomeScreen(),
+      routes: [
+        GoRoute(
+          path: 'details',
+          builder: (_, state) {
+            final id = state.uri.queryParameters['id']!;
+            return DetailsScreen(id: id);
+          },
+        ),
+        GoRoute(
+          path: 'booking',
+          builder: (_, state) {
+            final id = state.uri.queryParameters['id']!;
+            return BookingScreen(branchId: id);
+          },
+        ),
+      ],
+    ),
     GoRoute(path: '/my-bookings', builder: (_, __) => const MyBookingsScreen()),
     GoRoute(path: '/notifications', builder: (_, __) => const NotificationsScreen()),
     GoRoute(path: '/map', builder: (_, __) => const MapScreen()),

@@ -1,3 +1,4 @@
+import 'package:coworking_booking/presentation/providers/theme_providers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -23,6 +24,17 @@ class HomeScreen extends ConsumerWidget {
           onPressed: () => context.go('/map'),
           icon: const Icon(Icons.map),
         ),
+        Consumer(
+    builder: (context, ref, _) {
+      final themeMode = ref.watch(themeProvider);
+      return IconButton(
+        onPressed: () => ref.read(themeProvider.notifier).toggleTheme(),
+        icon: Icon(
+          themeMode == ThemeMode.light ? Icons.dark_mode : Icons.light_mode,
+        ),
+      );
+    },
+  ),
       ],
       body: Padding(
         padding: EdgeInsets.all(16.w),
@@ -143,7 +155,7 @@ class _BranchCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => context.go('/details?id=${branch.id}'),
+      onTap: () => context.go('/home/details?id=${branch.id}'),
       child: Card(
         child: Row(
           children: [
@@ -186,8 +198,7 @@ class _BranchCard extends StatelessWidget {
                             style: Theme.of(context).textTheme.titleSmall,
                           ),
                           FilledButton.icon(
-                            onPressed: () =>
-                                context.go('/booking?id=${branch.id}'),
+                           onPressed: () => context.go('/home/booking?id=${branch.id}'),
                             icon: const Icon(Icons.event),
                             label: const Text(
                               'Book',

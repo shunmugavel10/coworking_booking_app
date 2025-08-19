@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import '../providers/branch_providers.dart';
-import '../../data/models/branch.dart';
 
 class DetailsScreen extends ConsumerWidget {
   final String id;
@@ -40,9 +39,12 @@ class DetailsScreen extends ConsumerWidget {
                 children: branch.amenities.map((a) => Chip(label: Text(a.replaceAll('_', ' ').toLowerCase()))).toList(),
               ),
               const SizedBox(height: 12),
-              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+              Column(mainAxisAlignment: MainAxisAlignment.spaceBetween, 
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
                 Text('Hours: ${branch.hours}'),
-                FilledButton(onPressed: () => context.go('/booking?id=${branch.id}'), child: const Text('Book Now')),
+                const SizedBox(height: 25),
+                Center(child: FilledButton(onPressed: () => context.go('/home/booking?id=${branch.id}'), child: const Text('Book Now'))),
               ])
             ],
           ),
